@@ -14,9 +14,13 @@ var swiper = new Swiper('.blog-slider', {
       clickable: true,
     }
   });
-swiper.el.onmouseenter = function() {
-swiper.autoplay.stop();
-};
-swiper.el.onmouseleave = function() {
-swiper.autoplay.start();
-}
+
+var comtainer = document.getElementById('swiper_container');
+  if (comtainer !== null) {
+    comtainer.onmouseenter = function() {
+      swiper.autoplay.stop();
+    };
+    comtainer.onmouseleave = function() {
+      swiper.autoplay.start();
+      }
+  } else {}
