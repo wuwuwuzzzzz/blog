@@ -8,6 +8,8 @@ var swiper = new Swiper('.blog-slider', {
       delay: 3000
     },
     mousewheel: true,
+    observer:true,
+    observeParents:true,
     // autoHeight: true,
     pagination: {
       el: '.blog-slider__pagination',
