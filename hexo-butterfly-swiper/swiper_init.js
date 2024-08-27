@@ -1,5 +1,4 @@
 var swiper = new Swiper('.blog-slider', {
-    passiveListeners: true,
     spaceBetween: 30,
     effect: 'fade',
     loop: true,
@@ -7,10 +6,11 @@ var swiper = new Swiper('.blog-slider', {
       disableOnInteraction: false,
       delay: 3000
     },
-    mousewheel: true,
-    observer:true,
-    observeParents:true,
-    // autoHeight: true,
+    resizeObserver: true,
+    on: {
+      resize: function() {
+          this.update(); //窗口变化时，更新Swiper的一些属性，如宽高等
+    }, 
     pagination: {
       el: '.blog-slider__pagination',
       clickable: true,
